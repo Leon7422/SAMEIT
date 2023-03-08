@@ -1,15 +1,21 @@
 import InputTTN from './InputTTN/InputTTN';
 import SubmitButtonTTN from './SubmitButtonTTN/SubmitButtonTTN';
+import StatusAreaTTN from './StatusAreaTTN/StatusAreaTTN';
+import HistoryTTN from './HistoryTTN/HistoryTTN';
 
-import { SearchWrapper } from './HomePage.styled';
+import { Container } from './HomePage.styled';
 
 const HomePage = () => {
   return (
     <>
-      <SearchWrapper>
+      <Container>
         <InputTTN />
         <SubmitButtonTTN />
-      </SearchWrapper>
+      </Container>
+      <Container>
+        <StatusAreaTTN />
+        <HistoryTTN />
+      </Container>
     </>
   );
 };
