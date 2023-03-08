@@ -1,9 +1,9 @@
-import { SearchButton } from './SubmitButtonTTN.styled';
+import { SearchButton, TextBtn } from './SubmitButtonTTN.styled';
 
 const SubmitButtonTTN = () => {
   return (
     <SearchButton type="submit">
-      <p>Search</p>
+      <TextBtn>Search</TextBtn>
     </SearchButton>
   );
 };

@@ -22,3 +22,8 @@ export const SearchButton = styled.button`
     transform: translateY(2px);
   }
 `;
+
+export const TextBtn = styled.p`
+  font-size: 16px;
+  font-weight: 700;
+`;

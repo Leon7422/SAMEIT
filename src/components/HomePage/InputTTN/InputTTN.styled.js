@@ -6,7 +6,7 @@ export const SearchArea = styled.input`
   width: 40%;
   padding: 2px 15px;
   font-size: 20px;
-  font-weight: 100;
+  font-weight: 700;
   border-radius: 25px;
   background-color: #efefef;
   border: 1px solid grey;

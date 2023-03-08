@@ -1,11 +1,17 @@
-import { StatusContainer } from './StatusAreaTTN.styled';
+import { StatusContainer, Bolded } from './StatusAreaTTN.styled';
 
 const StatusAreaTTN = () => {
   return (
     <StatusContainer>
-      <p>Статус доставки: Одержано</p>
-      <p>Відправлено: Відділення №17 (до 30 кг): вул. Розумовська, 29 </p>
-      <p>Отримано: Відділення №13 (до 30 кг): просп. Гагаріна, 43</p>
+      <p> Одержано</p>
+      <p>
+        <Bolded>Відправлено: </Bolded>Відділення №17 (до 30 кг): вул.
+        Розумовська, 29
+      </p>
+      <p>
+        <Bolded>Отримано:</Bolded> Відділення №13 (до 30 кг): просп. Гагаріна,
+        43
+      </p>
     </StatusContainer>
   );
 };

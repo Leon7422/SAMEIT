@@ -13,3 +13,7 @@ export const StatusContainer = styled.div`
   border-radius: 3px;
   background-color: #efefef;
 `;
+
+export const Bolded = styled.span`
+  font-weight: 700;
+`;
