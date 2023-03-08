@@ -12,6 +12,13 @@ export const HistoryContainer = styled.div`
   border: 1px solid gray;
   border-radius: 3px;
   background-color: #efefef;
+
+  @media screen and (max-width: 768px) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 260px;
+    align-items: center;
+  }
 `;
 
 export const Title = styled.h2`
