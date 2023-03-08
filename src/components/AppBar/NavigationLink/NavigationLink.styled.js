@@ -18,6 +18,6 @@ export const StyledLink = styled(NavLink)`
   }
 
   :active {
-    transform: translateY(4px);
+    transform: translateY(2px);
   }
 `;
