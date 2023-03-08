@@ -1,16 +1,17 @@
+import { Routes, Route } from 'react-router-dom';
+
+import HomePage from './HomePage/HomePage';
+import OfficesPage from './OfficesPage/OfficesPage';
+import AppBar from './AppBar/AppBar';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
-      React
-    </div>
+    <>
+      <AppBar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/offices" element={<OfficesPage />} />
+      </Routes>
+    </>
   );
 };
