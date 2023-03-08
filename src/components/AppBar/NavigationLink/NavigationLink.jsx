@@ -1,7 +1,7 @@
-import { NavLink } from 'react-router-dom';
+import { StyledLink } from './NavigationLink.styled';
 
 const NavigationLink = ({ text, navigate }) => {
-  return <NavLink to={navigate}>{text}</NavLink>;
+  return <StyledLink to={navigate}>{text}</StyledLink>;
 };
 
 export default NavigationLink;
