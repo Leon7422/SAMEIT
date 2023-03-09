@@ -1,10 +1,6 @@
-import { useState } from 'react';
-
 import { SearchArea } from './InputTTN.styled';
 
-const InputTTN = () => {
-  const [numberTTN, SetNumberTTN] = useState('');
-
+const InputTTN = ({ numberTTN, SetNumberTTN }) => {
   return (
     <SearchArea
       type="number"
