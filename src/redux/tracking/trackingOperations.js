@@ -27,3 +27,10 @@ export const getData = createAsyncThunk(
     }
   }
 );
+
+export const clearData = createAsyncThunk(
+  'tracking/clearData',
+  async (credentials, { rejectWithValue, dispatch, getState }) => {
+    return 1;
+  }
+);

@@ -22,6 +22,25 @@ export const HistoryContainer = styled.div`
   }
 `;
 
+export const TitleContainer = styled.div`
+  align-items: center;
+  display: flex;
+  gap: 10px;
+`;
+
+export const SvgContainer = styled.button`
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  padding: 0;
+  border: 0;
+
+  :hover {
+    color: red;
+  }
+`;
+
 export const Title = styled.h2`
   font-weight: 700;
   padding: 0;

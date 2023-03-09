@@ -7,15 +7,17 @@ import StatusAreaTTN from './StatusAreaTTN/StatusAreaTTN';
 import HistoryTTN from './HistoryTTN/HistoryTTN';
 
 import { Container } from './HomePage.styled';
-import { getHistory } from 'redux/tracking/trackingSelectors';
+import { getNumber } from 'redux/tracking/trackingSelectors';
 
 const HomePage = () => {
-  const history = useSelector(getHistory);
-  const [numberTTN, SetNumberTTN] = useState(history[0] || '');
+  const lastUsedNumber = useSelector(getNumber);
+  const [numberTTN, SetNumberTTN] = useState(lastUsedNumber || '');
 
   useEffect(() => {
-    SetNumberTTN(history[0]);
-  }, [history]);
+    if (lastUsedNumber) {
+      SetNumberTTN(lastUsedNumber);
+    }
+  }, [lastUsedNumber]);
 
   return (
     <>

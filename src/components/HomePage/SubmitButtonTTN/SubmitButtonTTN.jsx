@@ -8,8 +8,8 @@ const SubmitButtonTTN = ({ numberTTN }) => {
   const dispatch = useDispatch();
 
   const getInfo = () => {
-    console.log();
-    if (numberTTN.length !== 14) {
+    console.log(numberTTN.toString().length);
+    if (numberTTN.toString().length !== 14) {
       Report.failure(
         'Помилка',
         'ТТН нової пошти повинна складатися з 14 цифр, будь ласка спробуйте знову',
