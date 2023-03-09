@@ -4,7 +4,7 @@ export const StatusContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-width: 400px;
+  width: 600px;
   height: 300px;
   padding: 10px;
   margin-top: 20px;
@@ -16,7 +16,8 @@ export const StatusContainer = styled.div`
   @media screen and (max-width: 768px) {
     margin-left: auto;
     margin-right: auto;
-    max-width: 600px;
+    width: 85%;
+    min-width: 260px;
   }
 `;
 

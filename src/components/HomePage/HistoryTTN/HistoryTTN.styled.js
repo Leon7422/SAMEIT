@@ -12,12 +12,32 @@ export const HistoryContainer = styled.div`
   border: 1px solid gray;
   border-radius: 3px;
   background-color: #efefef;
+  overflow-y: auto;
 
   @media screen and (max-width: 768px) {
     margin-left: auto;
     margin-right: auto;
     width: 260px;
     align-items: center;
+  }
+`;
+
+export const TitleContainer = styled.div`
+  align-items: center;
+  display: flex;
+  gap: 10px;
+`;
+
+export const SvgContainer = styled.button`
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  padding: 0;
+  border: 0;
+
+  :hover {
+    color: red;
   }
 `;
 
@@ -35,4 +55,15 @@ export const List = styled.ul`
 
 export const ListItem = styled.li`
   font-weight: 700;
+`;
+
+export const Button = styled.button`
+  border: none;
+
+  padding: 0;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
 `;
