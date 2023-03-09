@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getData, clearData } from './trackingOperations';
+import { getData, clearData, findClosestOffices } from './trackingOperations';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 
@@ -10,6 +10,9 @@ const initialState = {
   number: '',
   history: [],
   isLoading: false,
+  cityRef: '',
+  cityInfo: '',
+  closestOffices: null,
 };
 
 export const authSlice = createSlice({
@@ -33,6 +36,9 @@ export const authSlice = createSlice({
         state.sendedTo = payload.warehouseRecipient;
         state.history = payload.newHistory;
         state.number = payload.number;
+        state.cityRef = payload.refCity;
+        state.cityInfo = payload.cityInfo;
+        state.closestOffices = initialState.closestOffices;
         state.isLoading = false;
       })
 
@@ -42,6 +48,17 @@ export const authSlice = createSlice({
       })
       .addCase(clearData.pending, (state, action) => {
         state.isLoading = true;
+      })
+
+      .addCase(findClosestOffices.pending, (state, action) => {
+        state.isLoading = true;
+      })
+      .addCase(findClosestOffices.rejected, (state, action) => {
+        state.isLoading = false;
+      })
+      .addCase(findClosestOffices.fulfilled, (state, { payload }) => {
+        state.closestOffices = payload;
+        state.isLoading = false;
       });
   },
 });
