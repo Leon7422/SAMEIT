@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import InputTTN from './InputTTN/InputTTN';
@@ -12,6 +12,11 @@ import { getHistory } from 'redux/tracking/trackingSelectors';
 const HomePage = () => {
   const history = useSelector(getHistory);
   const [numberTTN, SetNumberTTN] = useState(history[0] || '');
+
+  useEffect(() => {
+    SetNumberTTN(history[0]);
+  }, [history]);
+
   return (
     <>
       <Container>

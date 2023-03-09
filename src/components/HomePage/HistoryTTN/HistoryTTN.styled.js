@@ -12,6 +12,7 @@ export const HistoryContainer = styled.div`
   border: 1px solid gray;
   border-radius: 3px;
   background-color: #efefef;
+  overflow-y: auto;
 
   @media screen and (max-width: 768px) {
     margin-left: auto;
@@ -35,4 +36,15 @@ export const List = styled.ul`
 
 export const ListItem = styled.li`
   font-weight: 700;
+`;
+
+export const Button = styled.button`
+  border: none;
+
+  padding: 0;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
 `;
