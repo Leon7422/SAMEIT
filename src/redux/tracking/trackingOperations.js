@@ -14,7 +14,7 @@ export const getData = createAsyncThunk(
       const warehouseRecipient = data.WarehouseRecipient;
       const number = Number(data.Number);
       const newHistory = [number, ...history];
-
+      console.log(data);
       return {
         status,
         warehouseRecipient,

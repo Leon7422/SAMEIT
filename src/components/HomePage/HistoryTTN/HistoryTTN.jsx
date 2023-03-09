@@ -1,14 +1,17 @@
 import { HistoryContainer, Title, List, ListItem } from './HistoryTTN.styled';
+import { useSelector } from 'react-redux';
+import { getHistory } from 'redux/tracking/trackingSelectors';
+import { nanoid } from 'nanoid';
 
 const HistoryTTN = () => {
+  const history = useSelector(getHistory);
   return (
     <HistoryContainer>
       <Title>Історія</Title>
       <List>
-        <ListItem>20400048799002</ListItem>
-        <ListItem>20400048799003</ListItem>
-        <ListItem>20400048799004</ListItem>
-        <ListItem>20400048799005</ListItem>
+        {history.map(item => (
+          <ListItem key={nanoid()}>{item}</ListItem>
+        ))}
       </List>
     </HistoryContainer>
   );

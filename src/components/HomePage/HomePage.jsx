@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import InputTTN from './InputTTN/InputTTN';
 import SubmitButtonTTN from './SubmitButtonTTN/SubmitButtonTTN';
@@ -6,9 +7,11 @@ import StatusAreaTTN from './StatusAreaTTN/StatusAreaTTN';
 import HistoryTTN from './HistoryTTN/HistoryTTN';
 
 import { Container } from './HomePage.styled';
+import { getHistory } from 'redux/tracking/trackingSelectors';
 
 const HomePage = () => {
-  const [numberTTN, SetNumberTTN] = useState('');
+  const history = useSelector(getHistory);
+  const [numberTTN, SetNumberTTN] = useState(history[0] || '');
   return (
     <>
       <Container>
