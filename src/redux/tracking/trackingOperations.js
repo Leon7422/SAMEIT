@@ -18,7 +18,6 @@ export const getData = createAsyncThunk(
       const refCity = data.RefCityRecipient;
       const cityInfo = data.WarehouseRecipientAddress;
       const newHistory = [number, ...history];
-      console.log(data);
       return {
         status,
         warehouseRecipient,
@@ -54,7 +53,6 @@ export const findClosestOffices = createAsyncThunk(
       return;
     }
     const data = await getClosestOffices(cityRef);
-    console.log(data.data.data);
     return data.data.data;
   }
 );
