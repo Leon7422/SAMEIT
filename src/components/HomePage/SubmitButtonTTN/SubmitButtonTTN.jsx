@@ -8,7 +8,6 @@ const SubmitButtonTTN = ({ numberTTN }) => {
   const dispatch = useDispatch();
 
   const getInfo = () => {
-    console.log(numberTTN.toString().length);
     if (numberTTN.toString().length !== 14) {
       Report.failure(
         'Помилка',
