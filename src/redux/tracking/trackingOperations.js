@@ -1,5 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { getInfoTTN } from 'api/getInfoTTN';
+import { getClosestOffices } from 'api/getClosestOffices';
+import { Report } from 'notiflix/build/notiflix-report-aio';
 
 export const getData = createAsyncThunk(
   'tracking/getData',
@@ -13,6 +15,8 @@ export const getData = createAsyncThunk(
       const warehouseSender = data.WarehouseSender;
       const warehouseRecipient = data.WarehouseRecipient;
       const number = Number(data.Number);
+      const refCity = data.RefCityRecipient;
+      const cityInfo = data.WarehouseRecipientAddress;
       const newHistory = [number, ...history];
       console.log(data);
       return {
@@ -21,6 +25,8 @@ export const getData = createAsyncThunk(
         warehouseSender,
         number,
         newHistory,
+        refCity,
+        cityInfo,
       };
     } catch (e) {
       console.log(e);
@@ -32,5 +38,23 @@ export const clearData = createAsyncThunk(
   'tracking/clearData',
   async (credentials, { rejectWithValue, dispatch, getState }) => {
     return 1;
+  }
+);
+
+export const findClosestOffices = createAsyncThunk(
+  'tracking/getOffices',
+  async (credentials, { rejectWithValue, dispatch, getState }) => {
+    const cityRef = getState().tracking.cityRef;
+    if (!cityRef) {
+      Report.info(
+        'Інформація для вас',
+        'Для того щоб користуватись даною функцією, будь ласка знайдіть свою першу товаро транспортну накладну у вкладці "Перевірити ТТН"',
+        'Окей, зараз знайду'
+      );
+      return;
+    }
+    const data = await getClosestOffices(cityRef);
+    console.log(data.data.data);
+    return data.data.data;
   }
 );
